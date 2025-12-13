@@ -1,4 +1,4 @@
-name: deploy the backend
+name: deploy the frontend
 
 on:
   push:
@@ -21,6 +21,8 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: ./Docker/Dockerfile.backend
+          file: ./Docker/Dockerfile.frontend
+          build-args: |
+             DATABASE_URL=${{ secrets.DATABASE_URL }}
           push: true
-          tags: yuvi062006/week-27-2-backend:${{ github.sha }}
+          tags: yuvi062006/week-27-2-frontend:${{ github.sha }}
