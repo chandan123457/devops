@@ -32,4 +32,4 @@ jobs:
           ssh -o StrictHostKeyChecking=no -i ~/ssh_key ubuntu@3.109.2.89 -t "
             docker stop user_frontend || true
             docker rm user_frontend || true
-            docker run -d --name user_frontend -p 3000:3000 yuvi062006/frontend:${{ github.sha }} "
+            docker run -d --name user_frontend -p 3000:3000  yuvi062006/week-27-2-frontend:${{ github.sha }} "
