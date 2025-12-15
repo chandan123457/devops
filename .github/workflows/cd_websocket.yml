@@ -31,4 +31,4 @@ jobs:
           ssh -o StrictHostKeyChecking=no -i ~/ssh_key ubuntu@3.109.2.89 -t "
           sudo docker stop user_websocket || true 
           sudo docker rm user_websocket || true 
-          sudo docker run --name user_websocket -d -p 8081:8081 -e DATABASE_URL=${{ secrets.DATABASE_URL }} yuvi062006/week-27-2-backend:${{ github.sha }}"
+          sudo docker run --name user_websocket -d -p 8081:8081 -e DATABASE_URL=${{ secrets.DATABASE_URL }} yuvi062006/week-27-2-websocket:${{ github.sha }}"
