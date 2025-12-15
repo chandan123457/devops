@@ -11,7 +11,7 @@
 // }
 
 export default async function Home() {
-  const res = await fetch("http://15.207.14.18:8080/users", {
+  const res = await fetch("http://3.109.2.89/:8080/users", {
     cache: "no-store"
   });
   const users = await res.json();
