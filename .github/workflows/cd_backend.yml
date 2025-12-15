@@ -30,6 +30,6 @@ jobs:   # virtual computer
           chmod 600 /home/runner/ssh_key
           ssh -o StrictHostKeyChecking=no -i ~/ssh_key ubuntu@3.109.2.89 -t "sudo docker stop user_backend || true 
           sudo docker rm user_backend || true 
-          sudo docker run --name user_backend -d -p 8080:8080  -e DATABASE_URL=${{ secrets.DATABASE_URL }}  yuvi062006/week-27-2-backend:${{ github.sha }}"
+          sudo docker run --name user_backend -d -p 8080:8080 -e DATABASE_URL='${{ secrets.DATABASE_URL }}' yuvi062006/week-27-2-backend:${{ github.sha }}"
 
 
