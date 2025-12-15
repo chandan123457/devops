@@ -27,7 +27,7 @@ jobs:
       - run: |
           echo "${{ secrets.SSH_PRIVATE_KEY }}" &> ~/ssh_key
           mkdir -p /home/runner/.ssh
-          chmod 600 /home/runner/ssh_key
+          chmod 600 /home/runner/ssh_key       
           ssh -o StrictHostKeyChecking=no -i ~/ssh_key ubuntu@3.109.2.89 -t "
           sudo docker stop user_websocket || true 
           sudo docker rm user_websocket || true 
